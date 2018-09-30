@@ -2,7 +2,7 @@ package ru.geekbrains.java3_1.algo1;
 
 import java.util.Scanner;
 
-public class Minimal {
+public class Middle {
     public static void main(String[] args) {
         //Запрашиваем цифры для ввода
         Scanner input = new Scanner(System.in);
@@ -17,14 +17,13 @@ public class Minimal {
         int c = Integer.valueOf(intC);
 
         //Создаем массив
-        int[] array={a,b,c};
-        int min = array[0];
-        for(int i = 0; i != array.length; i ++){
-            if(array[i] < min){//Если значение проверяемой ячейки меньше,
-                min = array[i];//то заменяем на текущее
-            }
+        int[] numbers = {a, b, c};
+        int sum = 0;
+        for (int i = 0; i < numbers.length; i++) {
+            sum += numbers[i];// К текущему значению добавляем значение из ячейки
         }
-        System.out.println("Минимальное значение" + min );
-        }
-        //Сложность O(n) так как поиск идет по всему массиву n раз
+        int average = sum / numbers.length;//делим на число цифр в массиве
+        System.out.println("Среднее значение: " + average);
+    }
+    //Сложность O(n) так как поиск идет по всему массиву n раз
 }
